@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.wd.mapper.WdMapper">
+
+    <select id="findAll" resultType="com.example.wd.entity.Wd">
+        select wd1.name1 from wd,wd1 where wd1.wid=wd.id and wd.id=#{wd_id}
+    </select>
+
+
+
+</mapper>

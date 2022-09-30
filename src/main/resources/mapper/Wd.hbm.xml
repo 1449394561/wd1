@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.example.wd.entity">
+    <class name="Wd" table="WD">
+        <id name="id" column="ID">
+            <!-- 主键生成策略：native:
+            native:如果后台是Oracle
+                                后台是MySQL，自动应用自增
+
+
+               assigned:程序员给主键赋值
+               uuid:32位的16进制数
+               sequence
+               native
+
+             -->
+
+            <generator class="assigned">
+                <param name="sequence">SEQ_NUM</param>
+            </generator>
+        </id>
+        <!--  <version name="version"></version> -->
+        <property name="name" type="string" column="NAME"/>
+        <property name="password" type="java.lang.String" column="PASSWORD"/>
+    </class>
+</hibernate-mapping>
